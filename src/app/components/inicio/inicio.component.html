@@ -1,0 +1,72 @@
+<div class="grid flex align-items-center justify-content-center min-w-sc border-radius:2">
+    <h1>   Imagenes </h1>
+</div>
+
+<div class="grid flex align-items-center justify-content-center min-w-sc border-radius:2" *ngFor = "let publicacion of imagenes">
+    <div class="card p-fluid bg-bluegray-900">
+        <div>
+            <p-image src="{{server}}{{publicacion.archivo}}" alt="Image" width="400" height="300" [preview]="true"></p-image>
+        </div>
+    </div>
+    <div class="col-12 md:col-6">
+        <div class="card p-fluid">
+            <h2> Datos de la publicación:  </h2>
+            <p> Artista: {{publicacion.nombre}}</p>
+            <p> Titulo: {{publicacion.titulo}}</p>
+            <p> Descripción: {{publicacion.descripcion}}</p>
+            <p> fecha de publicación: {{publicacion.fecha}}</p>
+            <button pButton pRipple label="Aprobar" class="mr-2 mb-2 " (click)= "aprobar(publicacion.archivo)"></button>
+            <button pButton pRipple label="Eliminar" class="mr-2 mb-2 " (click)= "eliminar(publicacion.archivo)"></button>
+        </div>
+    </div>
+</div>
+<div class="grid flex align-items-center justify-content-center min-w-sc border-radius:2">
+    <h1>   Musica </h1>
+</div>
+<div class="grid flex align-items-center justify-content-center min-w-sc border-radius:2" *ngFor = "let publicacion of musica">
+    
+    <div class="card p-fluid bg-bluegray-900">
+        <div>
+            <vm-player controls>
+                <vm-video cross-origin="true">
+                  <source data-src="{{server}}{{publicacion.archivo}}" type="audio/mp3"/>
+                </vm-video>
+        </vm-player></div>
+    </div>
+    <div class="col-12 md:col-6">
+        <div class="card p-fluid">
+            <h2> Datos de la publicación:  </h2>
+            <p> Artista: {{publicacion.nombre}}</p>
+            <p> Titulo: {{publicacion.titulo}}</p>
+            <p> Descripción: {{publicacion.descripcion}}</p>
+            <p> fecha de publicación: {{publicacion.fecha}}</p>
+            <button pButton pRipple label="Aprobar" class="mr-2 mb-2 " (click)= "aprobar(publicacion.archivo)"></button>
+            <button pButton pRipple label="Eliminar" class="mr-2 mb-2 " (click)= "eliminar(publicacion.archivo)"></button>
+        </div>
+    </div>
+</div>
+<div class="grid flex align-items-center justify-content-center min-w-sc border-radius:2">
+    <h1>   Videos </h1>
+</div>
+<div class="grid flex align-items-center justify-content-center min-w-sc border-radius:2" *ngFor = "let publicacion of videos">
+    <div class="card p-fluid bg-bluegray-900">
+        <div>
+            <vm-player controls>
+                <vm-video cross-origin="true">
+                  <source data-src="{{server}}{{publicacion.archivo}}" type="video/mp4"/>
+                </vm-video>
+            </vm-player>
+        </div>
+    </div>
+    <div class="col-12 md:col-6">
+        <div class="card p-fluid">
+            <h2> Datos de la publicación:  </h2>
+            <p> Artista: {{publicacion.nombre}}</p>
+            <p> Titulo: {{publicacion.titulo}}</p>
+            <p> Descripción: {{publicacion.descripcion}}</p>
+            <p> fecha de publicación: {{publicacion.fecha}}</p>
+            <button pButton pRipple label="Aprobar" class="mr-2 mb-2" (click)= "aprobar(publicacion.archivo)"></button>
+            <button pButton pRipple label="Eliminar" class="mr-2 mb-2" (click)= "eliminar(publicacion.archivo)"></button>
+        </div>
+    </div>
+</div>
